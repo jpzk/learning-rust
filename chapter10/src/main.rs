@@ -142,6 +142,14 @@ impl<T: Display + PartialOrd> Pair<T> {
     }
 }
 
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
 fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
 
@@ -167,5 +175,8 @@ fn main() {
     };
     println!("1 new tweet {}", tweet.summarize());
     println!("Hello, world!");
+
+    let longerOne = longest("hallo","welt");
+    println!("{}", longerOne)
 }
 
